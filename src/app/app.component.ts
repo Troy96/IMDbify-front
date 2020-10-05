@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'IMDbify-front';
+
+  constructor(
+    private _data: DataService
+  ) { }
+  title = 'IMDbify';
+
+  fetchMovies() {
+    try {
+      const movies = this._data.fetchMovies().toPromise();
+      return movies;
+    } catch (e) {
+      console.warn(e);
+    }
+  }
 }
