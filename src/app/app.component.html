@@ -1,0 +1,6 @@
+<ng-container *ngIf="movies$ | async as movies">
+  <ng-container *ngFor="let movie of movies">
+    <h2>{{movie?.id}}</h2>
+    <h4>{{movie?.name}}</h4>
+  </ng-container>
+</ng-container>

@@ -1,24 +1,23 @@
-import { Component } from '@angular/core';
-import { DataService } from './data.service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DataService, Movie } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   constructor(
     private _data: DataService
   ) { }
   title = 'IMDbify';
+  movies$: Observable<Movie[]>;
 
-  fetchMovies() {
-    try {
-      const movies = this._data.fetchMovies().toPromise();
-      return movies;
-    } catch (e) {
-      console.warn(e);
-    }
+  ngOnInit() {
+    this.movies$ = this._data.fetchMovies();
   }
+
+
 }

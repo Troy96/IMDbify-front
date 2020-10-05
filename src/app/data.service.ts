@@ -14,14 +14,14 @@ export class DataService {
 
   constructor() { }
 
-  Movies: Movie[] = MOVIES;
+  movies: Movie[] = MOVIES;
 
   fetchMovies(): Observable<Movie[]> {
-    return of(this.Movies)
+    return of(this.movies['default']);
   }
 
   fetchMovieById(id: number): Observable<Movie> {
-    const movie = this.Movies.find(m => m.id === id);
+    const movie = this.movies['default'].find(m => m.id === id);
     return of(movie);
   }
 
