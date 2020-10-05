@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { fromEvent, Observable, of } from 'rxjs';
+import { debounceTime, map, switchMap, tap } from 'rxjs/operators'
 import { DataService, Movie } from './data.service';
 
 @Component({
@@ -14,10 +15,25 @@ export class AppComponent implements OnInit {
   ) { }
   title = 'IMDbify';
   movies$: Observable<Movie[]>;
+  autocomplete$: Observable<any>;
+
+  @ViewChild('search', { static: true }) searchEl: ElementRef;
 
   ngOnInit() {
     this.movies$ = this._data.fetchMovies();
-  }
 
+    this.autocomplete$ = fromEvent(this.searchEl.nativeElement, 'input')
+      .pipe(
+        map((e: KeyboardEvent) => (e.target as HTMLInputElement).value),
+        debounceTime(1500),
+        switchMap(searchKey => this._data.fetchMoviesByQuery(searchKey))
+      )
+    this.autocomplete$.subscribe(
+      movies => {
+        this.movies$ = of(movies);
+      }
+    )
+
+  }
 
 }

@@ -25,4 +25,9 @@ export class DataService {
     return of(movie);
   }
 
+  fetchMoviesByQuery(query): Observable<Movie[]> {
+    const movies = this.movies['default'].filter(m => m.name.includes(query))
+    return of(movies);
+  }
+
 }
