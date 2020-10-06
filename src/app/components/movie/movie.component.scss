@@ -1,0 +1,25 @@
+:host {
+    width: 100%;
+}
+
+.movie {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+    padding: 5px;
+
+    background: #181818;
+    border-radius: 4px;
+
+    h4 {
+        color: #fff;
+        margin-left: 10px;
+    }
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #E50914;
+}
