@@ -1,14 +1,17 @@
 [
     {
         "id": 12,
-        "name": "Hera Pheri"
+        "name": "Hera Pheri",
+        "image": "https://via.placeholder.com/85"
     },
     {
         "id": 11,
-        "name": "Bhagam Bhag"
+        "name": "Bhagam Bhag",
+        "image": "https://via.placeholder.com/85"
     },
     {
         "id": 23,
-        "name": "Golmaal"
+        "name": "Golmaal",
+        "image": "https://via.placeholder.com/85"
     }
 ]

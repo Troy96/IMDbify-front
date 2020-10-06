@@ -31,15 +31,16 @@
 .main-container {
     position: relative;
 
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100vh;
 
-    background: #000;
+    background: rgba($color: #000000, $alpha: 0.8);
 
     .imdbify {
         position: absolute;
-        width: 100%;
+        width: 50vw;
 
         top: 50px;
 
@@ -53,11 +54,48 @@
 
             input {
                 height: 30px;
-                width: 50vw;
+                width: 100%;
 
                 padding-left: 10px;
                 border-radius: 7px;
             }
+        }
+
+        &--dropdown {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            margin-top: 10px;
+
+            position: relative;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &--item {
+                display: flex;
+                justify-content: flex-start;
+
+                width: 100%;
+                padding: 5px;
+
+                background: #181818;
+                border-radius: 4px;
+
+                h4 {
+                    color: #fff;
+                    margin-left: 10px;
+                }
+            }
+
+            .line {
+                width: 100%;
+                height: 1px;
+                background: #E50914;
+            }
+
         }
     }
 }

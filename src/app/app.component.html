@@ -4,16 +4,22 @@
 
 <div class="main-container">
   <div class="imdbify">
-    
+
     <div class="imdbify--search">
       <input type="text" #search placeholder="Search for movie by name or year...">
     </div>
-    
-    <ng-container *ngIf="movies$ | async as movies">
-      <ng-container *ngFor="let movie of movies">
-        <h2>{{movie?.id}}</h2>
-        <h4>{{movie?.name}}</h4>
+
+    <div class="imdbify--dropdown">
+      <ng-container *ngIf="movies$ | async as movies">
+        <ng-container *ngFor="let movie of movies">
+          <div class="imdbify--dropdown--item">
+            <span><img src="{{movie.image}}" alt="movie-image"></span>
+            <h4>{{movie.name}}</h4>
+          </div>
+          <span class="line"></span>
+        </ng-container>
       </ng-container>
-    </ng-container>
+    </div>
+
   </div>
 </div>

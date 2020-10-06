@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   @ViewChild('search', { static: true }) searchEl: ElementRef;
 
   ngOnInit() {
-    this.movies$ = this._data.fetchMovies();
 
     this.autocomplete$ = fromEvent(this.searchEl.nativeElement, 'input')
       .pipe(
