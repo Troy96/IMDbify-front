@@ -13,6 +13,7 @@ export class AutocompleteComponent implements OnInit {
 
   movies$: Observable<Movie[]>;
   autocomplete$: Observable<any>;
+  hasMovies: boolean = true;
   @ViewChild('search', { static: true }) searchEl: ElementRef;
 
 
@@ -26,11 +27,13 @@ export class AutocompleteComponent implements OnInit {
       .pipe(
         map((e: KeyboardEvent) => (e.target as HTMLInputElement).value),
         debounceTime(1500),
-        switchMap(searchKey => this._data.fetchMoviesByQuery(searchKey))
+        switchMap(searchKey => searchKey ? this._data.fetchMoviesByQuery(searchKey) : of(''))
       )
     this.autocomplete$.subscribe(
       movies => {
+        this.hasMovies = true;
         this.movies$ = of(movies);
+        if (!Array.isArray(movies)) this.hasMovies = false;
       }
     )
 
