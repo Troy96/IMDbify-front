@@ -1,0 +1,114 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: #181818;
+    color: #fff;
+
+    width: 100%;
+    height: 45px;
+
+    p {
+        padding: 5px;
+        margin-left: 15px;
+
+        background: #E50914;
+        color: #000;
+
+        border-radius: 4px;
+
+        font-weight: 800;
+    }
+}
+
+.main-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: rgba($color: #000000, $alpha: 0.8);
+
+    .imdbify {
+        position: absolute;
+        width: 50vw;
+
+        top: 50px;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        &--search {
+            display: inline-flex;
+            justify-content: center;
+
+            input {
+                height: 30px;
+                width: 100%;
+
+                padding-left: 10px;
+                border-radius: 7px;
+            }
+        }
+
+        &--dropdown {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            margin-top: 10px;
+
+            position: relative;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &--item {
+                display: flex;
+                justify-content: flex-start;
+
+                width: 100%;
+                padding: 5px;
+
+                background: #181818;
+                border-radius: 4px;
+
+                h4 {
+                    color: #fff;
+                    margin-left: 10px;
+                }
+            }
+
+            .line {
+                width: 100%;
+                height: 1px;
+                background: #E50914;
+            }
+
+        }
+    }
+}
+
+input::-webkit-placeholder {
+    color: grey;
+}
+
+input:-moz-placeholder {
+    color: grey;
+}
+
+input:focus {
+    outline: none;
+    border-color: #E50914;
+}

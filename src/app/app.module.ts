@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AutocompleteComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

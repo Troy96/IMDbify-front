@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import * as MOVIES from './movies.mock.json'
+import * as MOVIES from '../mocks/movies.mock.json'
 
 export interface Movie {
   id: number;
