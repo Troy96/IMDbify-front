@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import * as MOVIES from '../mocks/movies.mock.json'
-
-export interface Movie {
-  id: number;
-  name: string;
-  image: string
-}
+import * as MOVIES from '../mocks/movies.mock.json';
+import { Movie } from '../interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root'

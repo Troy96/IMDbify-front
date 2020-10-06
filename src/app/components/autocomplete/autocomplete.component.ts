@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { fromEvent, Observable, of } from 'rxjs';
 import { debounceTime, map, switchMap } from 'rxjs/operators'
-import { DataService, Movie } from '../../services/data.service';
+import { DataService } from '../../services/data.service';
+import { Movie } from '../../interfaces/movie.interface';
 
 @Component({
   selector: 'app-autocomplete',
