@@ -16,6 +16,9 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Click handler for movie click. Emits the movie id to the parent component which simply alerts it
+   */
   public onMovieClick() {
     this.movieId.emit(this.movie.id);
   }

@@ -39,6 +39,10 @@ export class AutocompleteComponent implements OnInit {
 
   }
 
+  /**
+   * Gets the child movie id and alerts on the screen
+   * @param id
+   */
   onMovieClick(id: number) {
     alert(`You clicked on movie with id ${id}`)
   }
