@@ -1,8 +1,19 @@
-<input type="text" #search>
+<div class="navbar">
+  <p>IMDbify</p>
+</div>
 
-<ng-container *ngIf="movies$ | async as movies">
-  <ng-container *ngFor="let movie of movies">
-    <h2>{{movie?.id}}</h2>
-    <h4>{{movie?.name}}</h4>
-  </ng-container>
-</ng-container>
+<div class="main-container">
+  <div class="imdbify">
+    
+    <div class="imdbify--search">
+      <input type="text" #search placeholder="Search for movie by name or year...">
+    </div>
+    
+    <ng-container *ngIf="movies$ | async as movies">
+      <ng-container *ngFor="let movie of movies">
+        <h2>{{movie?.id}}</h2>
+        <h4>{{movie?.name}}</h4>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
