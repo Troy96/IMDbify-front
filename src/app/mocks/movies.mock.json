@@ -2,16 +2,23 @@
     {
         "id": 12,
         "name": "Hera Pheri",
-        "image": "https://via.placeholder.com/85"
+        "image": "https://via.placeholder.com/85",
+        "year_of_release": 2019,
+        "director": "A"
+
     },
     {
         "id": 11,
         "name": "Bhagam Bhag",
-        "image": "https://via.placeholder.com/85"
+        "image": "https://via.placeholder.com/85",
+        "year_of_release": 2009,
+        "director": "B"
     },
     {
         "id": 23,
         "name": "Golmaal",
-        "image": "https://via.placeholder.com/85"
+        "image": "https://via.placeholder.com/85",
+        "year_of_release": 2002,
+        "director": "C"
     }
 ]
