@@ -1,4 +1,6 @@
-# IMDbifyFront
+# IMDbify
+
+![Screen Image](https://github.com/Troy96/IMDbify-front/blob/master/src/assets/auto.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
