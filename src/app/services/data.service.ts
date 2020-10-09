@@ -17,15 +17,15 @@ export class DataService {
   movies: Movie[] = MOVIES;
 
   fetchMovies(): Observable<Movie[]> {
-    //return of(this.movies['default']);
-    return this._http.get<Movie[]>(environment.apiUrl + '/movies')
+    return of(this.movies['default']);
+    //return this._http.get<Movie[]>(environment.apiUrl + '/movies')
   }
 
   fetchMoviesByQuery(query): Observable<Movie[]> {
-    // const movies = this.movies['default'].filter(m => m.name.includes(query))
-    // return of(movies);
+    const movies = this.movies['default'].filter(m => m.name.includes(query))
+    return of(movies);
 
-    return this._http.get<Movie[]>(environment.apiUrl + '/movies/?search=' + query)
+    //return this._http.get<Movie[]>(environment.apiUrl + '/movies/?search=' + query)
   }
 
 }
