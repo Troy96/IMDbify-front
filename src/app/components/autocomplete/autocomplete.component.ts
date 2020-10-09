@@ -87,7 +87,6 @@ export class AutocompleteComponent implements OnInit {
     let index;
 
     for (let i = 0; i < children.length; i++) {
-      console.log(children[i].children[0].className)
       if (children[i].children[0].className.includes('focus')) {
         index = i;
         break;
