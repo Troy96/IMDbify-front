@@ -73,7 +73,7 @@
 
             .no-results {
                 height: 35px;
-                
+
                 display: flex;
                 align-items: center;
             }
@@ -93,4 +93,8 @@ input:-moz-placeholder {
 input:focus {
     outline: none;
     border-color: #E50914;
+}
+
+.focus {
+    background: dimgrey;
 }

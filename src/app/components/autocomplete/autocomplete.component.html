@@ -9,7 +9,7 @@
             <input type="text" #search placeholder="Search for movie by name or year...">
         </div>
 
-        <div class="imdbify--dropdown">
+        <div class="imdbify--dropdown" #movies>
             <ng-container *ngIf="movies$ | async as movies;">
                 <ng-container *ngFor="let movie of movies">
                     <app-movie [movie]="movie" (movieId)="onMovieClick($event)"></app-movie>

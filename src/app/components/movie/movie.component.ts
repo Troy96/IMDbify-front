@@ -13,6 +13,7 @@ export class MovieComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
   }
 
@@ -21,6 +22,14 @@ export class MovieComponent implements OnInit {
    */
   public onMovieClick() {
     this.movieId.emit(this.movie.id);
+  }
+
+  onPressUp() {
+    console.log('up')
+  }
+
+  onPressDown() {
+    console.log('down')
   }
 
 }
