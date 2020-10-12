@@ -59,8 +59,7 @@ export class AutocompleteComponent implements OnInit {
         this.focusedMovieIndex = 0;
         this.movies$ = of(movies);
         this.moviesElList = this.moviesEl.toArray();
-
-        if (!Array.isArray(movies)) return this.hasMovies = false;
+        if (!Array.isArray(movies) || ((Array.isArray(movies) && !movies.length))) return this.hasMovies = false;
 
         setTimeout(() => {
           this.applyFocus();
