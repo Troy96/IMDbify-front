@@ -60,7 +60,7 @@ export class AutocompleteComponent implements OnInit {
         this.movies$ = of(movies);
         this.moviesElList = this.moviesEl.toArray();
 
-        if (!Array.isArray(movies)) this.hasMovies = false;
+        if (!Array.isArray(movies)) return this.hasMovies = false;
 
         setTimeout(() => {
           this.applyFocus();
@@ -96,7 +96,7 @@ export class AutocompleteComponent implements OnInit {
   }
 
   /**
-   * Removes the movie element having class `focus`
+   * Removes the class `focus` from the movie element
    */
   removeFocusedElement() {
     const i = this.getElementIndexWithFocus();
